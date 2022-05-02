@@ -2,19 +2,6 @@
 #define LISTS_H
 #include <stdlib.h>
 #include <stdio.h>
-
-/**
- * struct list_pointer - singly linked list
- * @address: address holder pointer
- * @next: points to the next node
- * Description: linked list node strcture
- */
-typedef struct list_pointer
-{
-	void *address;
-	struct list_pointer *next;
-} list_p;
-
 /**
  * struct listint_s - singly linked list
  * @n: integer
