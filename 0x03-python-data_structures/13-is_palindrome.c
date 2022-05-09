@@ -1,6 +1,32 @@
 #include "lists.h"
 #include <stdio.h>
 /**
+ * second_half - extract the second half of a list
+ * @aux2: list
+ * @len: list lenght
+ * Return: no return
+ */
+void second_half(listint_t **aux2, int len)
+{
+	listint_t *prev;
+	listint_t *current;
+	listint_t *next;
+	int i = 0;
+
+	prev = NULL;
+	for (; i < len / 2; i++)
+		*aux2 = (*aux2)->next;
+	current = *aux2;
+	while (current)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+	*aux2 = prev;
+}
+/**
  * is_palindrome - checks if a singly linked
  * list is a palindrome
  * @head: pointer to the list
@@ -11,7 +37,7 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *temp = *head, *aux1, *aux2;
-	int len = 0, i = 0, stop = 0;
+	int len = 0;
 
 	if (!*head)
 		return (1);
@@ -24,18 +50,13 @@ int is_palindrome(listint_t **head)
 		return (0);
 	aux1 = *head;
 	aux2 = *head;
-	stop = len / 2;
-	while (stop != len)
+	second_half(&aux2, len);
+	while (aux2)
 	{
-		aux2 = *head;
-		for (i = 0; i < len - 1; i++)
-		{
-			aux2 = aux2->next;
-		}
 		if (aux1->n != aux2->n)
 			return (0);
 		aux1 = aux1->next;
-		len--;
+		aux2 = aux2->next;
 	}
 	return (1);
 }
