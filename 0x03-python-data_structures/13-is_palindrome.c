@@ -46,8 +46,6 @@ int is_palindrome(listint_t **head)
 		len++;
 		temp = temp->next;
 	}
-	if (len % 2 != 0)
-		return (0);
 	aux1 = *head;
 	aux2 = *head;
 	second_half(&aux2, len);
