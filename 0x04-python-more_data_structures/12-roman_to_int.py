@@ -8,12 +8,12 @@ def roman_to_int(roman_string):
     i = 1
     if len(roman_string) > 1:
         while (i < len(roman_string)):
-                if convert[roman_string[i]] <= convert[roman_string[n]]:
-                    decimal += convert[roman_string[n]]
-                else:
-                    decimal -= convert[roman_string[n]]
-                n += 1
-                i += 1
+            if convert[roman_string[i]] <= convert[roman_string[n]]:
+                decimal += convert[roman_string[n]]
+            else:
+                decimal -= convert[roman_string[n]]
+            n += 1
+            i += 1
         decimal += convert[roman_string[n]]
     else:
         decimal += convert[roman_string]
