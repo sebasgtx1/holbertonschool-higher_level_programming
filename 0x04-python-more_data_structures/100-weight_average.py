@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def weight_average(my_list=[]):
+    if not my_list:
+        return 0
     avarage = 0
     tuplee = 1
     w = 0
