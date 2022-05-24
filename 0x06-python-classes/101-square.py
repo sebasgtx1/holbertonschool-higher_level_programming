@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+"""8. Print Square instance:
+    Write a class Square that defines a square by: (based on 6-square.py)"""
+
+
 class Square:
     """ Class that defines a Square with size"""
     def __init__(self, size=0, position=(0, 0)):

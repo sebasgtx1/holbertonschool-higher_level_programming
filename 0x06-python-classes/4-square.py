@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""4. Access and update private attribute:
+    Write a class Square that defines a square by: (based on 3-square.py)"""
+
+
 class Square:
     """ Class that defines a Square with size"""
     def __init__(self, size=0):

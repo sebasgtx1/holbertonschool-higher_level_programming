@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""3. Area of a square:
+    Write a class Square that defines a square by: (based on 2-square.py)"""
+
+
 class Square:
     """ Class that defines a Square with size"""
     def __init__(self, size=0):

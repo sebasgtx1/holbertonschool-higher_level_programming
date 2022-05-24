@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+"""6. Coordinates of a square:
+    Write a class Square that defines a square by: (based on 5-square.py)"""
+
+
 class Square:
     """ Class that defines a Square with size"""
     def __init__(self, size=0, position=(0, 0)):
