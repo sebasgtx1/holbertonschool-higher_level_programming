@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """7. Singly linked list:
     Write a class Node that defines a node of a singly linked list
     And, write a class SinglyLinkedList that defines a singly linked list
