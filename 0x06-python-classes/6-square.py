@@ -78,13 +78,14 @@ class Square:
 
     def my_print(self):
         """ Method that prints the square"""
-        for j in range(self.__position[1]):
-            print()
-        for i in range(self.__size):
-            for k in range(self.__position[0]):
-                print(" ", end="")
-            for i in range(self.__size):
-                print("#", end="")
-            print()
         if self.__size == 0:
             print()
+        else:
+            for j in range(self.__position[1]):
+                print()
+            for i in range(self.__size):
+                for k in range(self.__position[0]):
+                    print(" ", end="")
+                for i in range(self.__size):
+                    print("#", end="")
+                print()
