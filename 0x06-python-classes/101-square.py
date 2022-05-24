@@ -67,11 +67,10 @@ class Square:
         self.__position = value
 
     def __str__(self):
-    """ Method that creates a string with the propeties of the square
-
-        Return:
-            the square
-    """
+        """ Method that creates a string with the propeties of the square
+            Return:
+                the square
+        """
         square = ""
         if self.__size == 0:
             return square
