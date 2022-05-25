@@ -6,6 +6,7 @@
 
 
 class Node:
+    """Class to define a node """
     def __init__(self, data, next_node=None):
         """Constructor Method to define data and next_node
             Args:
@@ -55,6 +56,7 @@ class Node:
 
 
 class SinglyLinkedList:
+    """ Class to define a SLL """
     def __str__(self):
         """Method to use print or str for the SLL
             Return:
