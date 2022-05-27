@@ -5,7 +5,13 @@
 
 
 def matrix_divided(matrix, div):
-    """ Funtion that devides a matrix by an number """
+    """ Funtion that devides a matrix by an number
+        Args:
+            matrix (list(list)): matrix of integers/floats
+            div (int or float): divisor
+        Return:
+            a new matrix with the result
+    """
     error = "matrix must be a matrix (list of lists) of integers/floats"
     i = 0
     j = 0
