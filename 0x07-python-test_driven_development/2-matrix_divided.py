@@ -20,7 +20,7 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
     if not matrix or not all([isinstance(item, list) for item in matrix]):
         raise TypeError(error)
-    if len(matrix) == 0:
+    if len(matrix) == 0 or not all(len(item) != 0 for item in matrix):
         raise TypeError(error)
     if not all([len(item) == len(matrix[0]) for item in matrix]):
         raise TypeError("Each row of the matrix must have the same size")

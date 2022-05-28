@@ -63,4 +63,6 @@ Passing a normal matrix of size 4
 
 Passing an empty matrix
 	>>> matrix_divided([[], []], 3)
-	[[], []]
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
