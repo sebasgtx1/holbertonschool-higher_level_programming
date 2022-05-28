@@ -1,0 +1,85 @@
+The ``100-matrix_mul`` module
+============================
+
+Using ``matrix_mul``
+---------------------
+
+Importing function from the module:
+
+    >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+Test:
+
+Multiplying two matrices (same size)
+	>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+	[[7, 10], [15, 22]]
+
+Multiplying two matrices (different size but possible)
+
+	>>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+	[[13, 16]]
+
+Multiplying two matrices with floats
+	>>> matrix_mul([[1.1, 2]], [[3, 4], [5, 6]])
+	[[13.3, 16.4]]
+
+Passing a bad matrix a (number)
+	>>> matrix_mul(2, [[1, 2]])
+	Traceback (most recent call last):
+		...
+	TypeError: m_a must be a list
+
+Passing a bad matrix b (number)
+        >>> matrix_mul([[1, 2]], 2)
+        Traceback (most recent call last):
+                ...
+        TypeError: m_b must be a list
+
+Passing a bad matrix a (list of chars)
+        >>> matrix_mul(['a', 'b'], [[1, 2]])
+        Traceback (most recent call last):
+                ...
+        TypeError: m_a must be a list of lists
+
+Passing a bad matrix b (list of chars)
+        >>> matrix_mul([[1, 2]], ['a', 'b'])
+        Traceback (most recent call last):
+                ...
+        TypeError: m_b must be a list of lists
+
+Passing a bad matrix b (list of list of chars)
+	>>> matrix_mul([[1, 2], [1, 2]], [['a', 'b']])
+	Traceback (most recent call last):
+		...
+	TypeError: m_b should contain only integers or floats
+
+Passing a bad matrix a (list of list of chars)
+        >>> matrix_mul([['a', 'b']], [[1, 2], [1, 2]])
+        Traceback (most recent call last):
+                ...
+        TypeError: m_a should contain only integers or floats
+
+Passing an empty matrix a
+	>>> matrix_mul([[]], [[1, 2]])
+	Traceback (most recent call last):
+		...
+	ValueError: m_a can't be empty
+
+Passing a bad matrix a (rows with diferent size)
+	>>> matrix_mul([[1, 2, 3], [1, 2]], [[1, 2], [1, 2]])
+	Traceback (most recent call last):
+		...
+	TypeError: each row of m_a must be of the same size
+
+Passing a bad matrix a (rows with diferent size)
+        >>> matrix_mul([[1, 2], [1, 2]], [[1, 2, 3], [1, 2]])
+        Traceback (most recent call last):
+                ...
+        TypeError: each row of m_b must be of the same size
+
+Multiplying two matrices (different size but not possible)
+
+	>>> matrix_mul([[1, 2, 3]], [[3, 4], [5, 6]])
+        Traceback (most recent call last):
+		...
+	ValueError: m_a and m_b can't be multiplied
