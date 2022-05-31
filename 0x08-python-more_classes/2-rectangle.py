@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-""" 1. Real definition of a rectangle
+""" 2. Area and Perimeter:
     Write a class Rectangle that defines
-    a rectangle by: (based on 0-rectangle.py)
+    a rectangle by: (based on 1-rectangle.py)
 """
 
 
@@ -49,3 +49,16 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def area(self):
+        """ Method to calculate the area of the rectangule
+        """
+        return self.__width * self.__height
+
+    def perimeter(self):
+        """ Method to calculate the perimeter of the
+        rectangule
+        """
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return 2*self.__width + 2*self.__height
