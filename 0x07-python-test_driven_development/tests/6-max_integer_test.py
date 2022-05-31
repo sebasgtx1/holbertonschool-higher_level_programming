@@ -34,6 +34,16 @@ class TestMaxInteger(unittest.TestCase):
         with self.assertRaises(TypeError):
             max_integer([(2, 3), 3])
 
+    def testmiddlemax(self):
+        """Test case: the max is in the middle of the list
+        """
+        self.assertEqual(max_integer([-2, -1, -3]), -1)
+
+    def testmissingargs(self):
+        """ Test case: missing two arguments
+        """
+        self.assertEqual(max_integer(), None)
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
