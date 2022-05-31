@@ -9,6 +9,25 @@ Importing function from the module:
 	>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
 
 Test:
+Missing one argument
+
+	>>> lazy_matrix_mul([[1, 2]])
+	Traceback (most recent call last):
+		...
+	TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+Missing arguments
+
+	>>> lazy_matrix_mul()
+	Traceback (most recent call last):
+		...
+	TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+Passing a bad matrix a (rows with diferent size)
+	>>> lazy_matrix_mul([[1, 2, 3], [1, 2]], [[1, 2], [1, 2]])
+	Traceback (most recent call last):
+		...
+	ValueError: setting an array element with a sequence.
 
 Multiplying two matrices (same size)
 	>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
