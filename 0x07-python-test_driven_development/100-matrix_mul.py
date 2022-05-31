@@ -49,8 +49,9 @@ def matrix_mul(m_a, m_b):
     row_mul = []
     result = []
     element = 0
+    limit = max(len(m_a), len(m_b))
     for row_a in m_a:
-        for i in range(len(m_b)):
+        for i in range(limit):
             for j in range(len(m_b)):
                 element += row_a[j] * m_b[j][i]
             row_mul.append(element)
