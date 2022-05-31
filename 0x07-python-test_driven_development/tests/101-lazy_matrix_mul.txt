@@ -1,4 +1,4 @@
-The ``101-lazy_matrix_mul`` module
+The ``100-matrix_mul`` module
 ============================
 
 Using ``lazy_matrix_mul``
@@ -28,23 +28,29 @@ Passing a bad matrix b (number)
 	>>> lazy_matrix_mul([[1, 2]], 2)
 	Traceback (most recent call last):
 		...
-	ValueError: Scalar operands are not allowed, use '*' instead
+	ValueError: matmul: Input operand 1 does not have enough dimensions (has 0, gufunc core with signature (n?,k),(k,m?)->(n?,m?) requires 1)
 
 Passing a bad matrix a (list of chars)
         >>> lazy_matrix_mul(['a', 'b'], [[1, 2]])
 	Traceback (most recent call last):
 		...
-	ValueError: shapes (2,) and (1,2) not aligned: 2 (dim 0) != 1 (dim 0)
+	numpy.core._exceptions._UFuncNoLoopError: ufunc 'matmul' did not contain a loop with signature matching types (dtype('<U1'), dtype('int64')) -> None
 
 Passing an empty matrix a
 	>>> lazy_matrix_mul([[]], [[1, 2]])
 	Traceback (most recent call last):
 		...
-	ValueError: shapes (1,0) and (1,2) not aligned: 0 (dim 1) != 1 (dim 0)
+	ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 1 is different from 0)
+
+Passing a bad matrix a (rows with diferent size)
+	>>> lazy_matrix_mul([[1, 2, 3], [1, 2]], [[1, 2], [1, 2]])
+	array([list([1, 2, 3, 1, 2]), list([1, 2, 3, 1, 2, 3, 1, 2, 1, 2])],
+              dtype=object)
 
 Multiplying two matrices (different size but not possible)
 
 	>>> lazy_matrix_mul([[1, 2, 3]], [[3, 4], [5, 6]])
         Traceback (most recent call last):
 		...
-	ValueError: shapes (1,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)
+	ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 3)
+
