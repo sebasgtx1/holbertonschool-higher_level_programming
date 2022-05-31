@@ -9,6 +9,10 @@ Importing function from the module:
 
 Tests:
 
+Dividing a matrix by a float number:
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3.5)
+	[[0.29, 0.57, 0.86], [1.14, 1.43, 1.71]]
+
 Missing one argument
 	>>> matrix_divided([[1, 2, 3]])
 	Traceback (most recent call last):
@@ -19,7 +23,7 @@ Missing two arguments
 	>>> matrix_divided()
         Traceback (most recent call last):
                 ...
-	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'	
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
 Passing div = inf
 	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], float('inf'))
