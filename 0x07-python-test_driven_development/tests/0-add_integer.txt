@@ -9,7 +9,27 @@ Importing function from the module:
 
 Tests:
 
-Float overflow:
+Passing None
+	>>> add_integer(None)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Case Overflow
+
+	>>> add_integer(float('inf'), 0)
+	Traceback (most recent call last):
+		...
+	OverflowError: cannot convert float infinity to integer
+
+Case Overflow 2
+
+	>>> add_integer(float('inf'), float('-inf'))
+	Traceback (most recent call last):
+		...
+	OverflowError: cannot convert float infinity to integer
+
+Case Overflow 3:
     >>> add_integer(1500.5)
     1598
 
