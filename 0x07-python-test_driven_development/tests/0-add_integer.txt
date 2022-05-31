@@ -9,6 +9,16 @@ Importing function from the module:
 
 Tests:
 
+Float overflow:
+    >>> add_integer(1500.5)
+    1598
+
+Passing Nan
+	>>> add_integer(float('Nan'))
+	Traceback (most recent call last):
+		...
+	ValueError: cannot convert float NaN to integer
+
 Adding 1 and 2
 	>>> add_integer(1, 2)
 	3
