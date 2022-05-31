@@ -44,6 +44,11 @@ class TestMaxInteger(unittest.TestCase):
         """
         self.assertEqual(max_integer(), None)
 
+    def testListofOneelem(self):
+        """ Test case: missing two arguments
+        """
+        self.assertEqual(max_integer([1]), 1)
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
