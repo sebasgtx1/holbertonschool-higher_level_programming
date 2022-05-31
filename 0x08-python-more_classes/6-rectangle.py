@@ -1,16 +1,19 @@
 #!/usr/bin/python3
-""" 5. Detect instance deletion:
+""" 6. How many instances:
     Write a class Rectangle that defines
-    a rectangle by: (based on 4-rectangle.py)
+    a rectangle by: (based on 5-rectangle.py)
 """
 
 
 class Rectangle:
     """ class Rectangle that defines a rectangle
     """
+    number_of_instances = 0
+
     def __del__(self):
         """ Method that destorys the object
         """
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
     def __repr__(self):
@@ -40,6 +43,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
