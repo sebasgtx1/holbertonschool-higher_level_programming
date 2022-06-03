@@ -8,6 +8,7 @@
 
 
 class LockedClass:
+    """ Locked class that prevents high memory cost"""
     __slots__ = ['first_name']
 
     def __init__(self):
