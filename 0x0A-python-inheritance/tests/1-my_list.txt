@@ -1,0 +1,66 @@
+The ``1-my_list`` module
+============================
+
+Using ``MyList``
+---------------------
+
+Importing function from the module:
+	>>> MyList = __import__('1-my_list').MyList
+
+
+Good list (sorted list - main)
+      >>> my_list = MyList()
+      >>> my_list.append(1)
+      >>> my_list.append(4)
+      >>> my_list.append(2)
+      >>> my_list.append(3)
+      >>> my_list.append(5)
+      >>> my_list.print_sorted()
+      [1, 2, 3, 4, 5]
+
+Good list (empty list)
+      >>> my_list = MyList()
+      >>> my_list.print_sorted()
+      []
+
+Passing arguments to the print funtion
+      >>> my_list = MyList()
+      >>> my_list.print_sorted([1, 2, 3])
+      Traceback (most recent call last):
+		...
+      TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+check the __str__ method
+      >>> my_list = MyList()
+      >>> my_list.append(1)
+      >>> print(my_list)
+      [1]
+
+Good list with just one number
+      >>> my_list = MyList()
+      >>> my_list.append(1)
+      >>> my_list.print_sorted()
+      [1]
+
+Good list with negative numbers
+      >>> my_list = MyList()
+      >>> my_list.append(-1)
+      >>> my_list.append(1)
+      >>> my_list.append(2)
+      >>> my_list.append(-2)
+      >>> my_list.append(3)
+      >>> my_list.append(-3)
+      >>> my_list.print_sorted()
+      [-3, -2, -1, 1, 2, 3]
+
+Good list with repeated numbers
+      >>> my_list = MyList()
+      >>> my_list.append(1)
+      >>> my_list.append(2)
+      >>> my_list.append(2)
+      >>> my_list.append(3)
+      >>> my_list.print_sorted()
+      [1, 2, 2, 3]
+
+
+
