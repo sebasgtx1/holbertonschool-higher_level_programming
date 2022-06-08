@@ -81,23 +81,16 @@ Passing three arguments to integer_validator
     	      ...
     TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
-Passing one argument to the area
-    >>> bg = BaseGeometry()
-    >>> bg.area(6)
-    Traceback (most recent call last):
-    	      ...
-    TypeError: area() takes 1 positional argument but 2 were given
-
-Passing two argument to the area
-    >>> bg = BaseGeometry()
-    >>> bg.area(6, 6)
-    Traceback (most recent call last):
-    	      ...
-    TypeError: area() takes 1 positional argument but 3 were given
-
 Passing dict
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("age", {5, 6})
+    Traceback (most recent call last):
+              ...
+    TypeError: age must be an integer
+
+Passing False
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age", False)
     Traceback (most recent call last):
               ...
     TypeError: age must be an integer
