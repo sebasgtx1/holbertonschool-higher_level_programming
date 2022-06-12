@@ -39,7 +39,7 @@ class Rectangle(Base):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
-        self.__hegit = value
+        self.__height = value
 
     @property
     def x(self):
@@ -68,3 +68,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """ public method that calculates the area"""
+        return self.__width * self.__height
