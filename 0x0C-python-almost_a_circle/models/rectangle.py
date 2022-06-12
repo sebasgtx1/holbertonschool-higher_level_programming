@@ -86,3 +86,13 @@ class Rectangle(Base):
         value += "{}/{} - ".format(self.x, self.y)
         value += "{}/{}".format(self.width, self.height)
         return value
+
+    def update(self, *args, **kwargs):
+        """ public method that upddates the attributes of a rectangle object"""
+        if args is not None and len(args) != 0:
+            attributes = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, attributes[i], args[i])
+        else:
+            for key in kwargs:
+                setattr(self, key, kwargs[key])
