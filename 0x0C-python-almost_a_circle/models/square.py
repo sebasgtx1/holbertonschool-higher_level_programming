@@ -26,3 +26,21 @@ class Square(Rectangle):
         value += "{}/{} - ".format(self.x, self.y)
         value += "{}".format(self.size)
         return value
+
+    def update(self, *args, **kwargs):
+        """public method that upddates the attributes of a rectangle object"""
+        if args != None and len(args) != 0:
+            list_atr = ['id', 'size', 'x', 'y']
+            for i in range(len(args)):
+                if list_atr[i] == 'size':
+                    setattr(self, 'width', args[i])
+                    setattr(self, 'height', args[i])
+                else:
+                    setattr(self, list_atr[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if key == 'size':
+                    setattr(self, 'width', value)
+                    setattr(self, 'height', value)
+                else:
+                    setattr(self, key, value)
