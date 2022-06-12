@@ -89,10 +89,20 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ public method that upddates the attributes of a rectangle object"""
-        if args != None and len(args) != 0:
+        if args is not None and len(args) != 0:
             attributes = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args)):
                 setattr(self, attributes[i], args[i])
         else:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
+
+    def to_dictionary(self):
+        """ public method that returns the dictionary representation
+            of a rectangle"""
+
+        _dict_ = {'id': 0, 'width': 0, 'height': 0, 'x': 0, 'y': 0}
+
+        for key, value in _dict_.items():
+            _dict_[key] = getattr(self, key)
+        return _dict_
