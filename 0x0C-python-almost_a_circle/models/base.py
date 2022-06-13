@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ 1. base class """
 import json
+import os
 
 
 class Base():
@@ -58,3 +59,18 @@ class Base():
         dummy = cls(1, 1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """ public method that that returns a list of instances"""
+        filename = "{}.json".format(cls.__name__)
+        my_list = []
+
+        if os.path.exists(filename):
+            with open(filename, encoding="utf-8") as MyJFile:
+                obj = MyJFile.read()
+                my_obj_list = cls.from_json_string(obj)
+            for i in my_obj_list:
+                my_list.append(cls.create(**i))
+
+        return my_list
