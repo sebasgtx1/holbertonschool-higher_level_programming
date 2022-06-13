@@ -39,3 +39,13 @@ class Base():
 
         with open(filename, mode='w', encoding='utf-8') as MyFile:
             MyFile.write(cls.to_json_string(json_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ static method that returns the list of the JSON string
+            representation json_string
+        """
+        my_list = []
+        if json_string is not None:
+            my_list = json.loads(json_string)
+        return my_list
