@@ -71,7 +71,7 @@ class TestRectangleMethods(unittest.TestCase):
         """ testing the area funtion
         """
         r1 = Rectangle(3, 2)
-        self.assertEqual(r1.area(),6)
+        self.assertEqual(r1.area(), 6)
 
     def test_display(self):
         """ testing the display funtion
@@ -79,17 +79,38 @@ class TestRectangleMethods(unittest.TestCase):
         r1 = Rectangle(2, 2)
         with patch('sys.stdout', new=StringIO()) as output:
             r1.display()
-            self.assertEqual(output.getvalue(),"##\n##\n")
+            self.assertEqual(output.getvalue(), "##\n##\n")
 
+        r2 = Rectangle(2, 2, 1, 1)
+        with patch('sys.stdout', new=StringIO()) as output:
+            r2.display()
+            self.assertEqual(output.getvalue(), "\n ##\n ##\n")
 
+    def test_str_(self):
+        """ testing the __str__ magic method"""
+        my_rectangle = str(Rectangle(2, 2, 1, 1))
+        self.assertEqual(my_rectangle, "[Rectangle] (1) 1/1 - 2/2")
 
+    def test_update(self):
+        """ """
+        r1 = Rectangle(10, 10, 10, 10)
 
+        r1.update(89)
+        my_str = str(r1)
+        self.assertEqual(my_str, "[Rectangle] (89) 10/10 - 10/10")
 
+        r1.update(89, 2)
+        my_str = str(r1)
+        self.assertEqual(my_str, "[Rectangle] (89) 10/10 - 2/10")
 
+        r1.update(89, 2, 3)
+        my_str = str(r1)
+        self.assertEqual(my_str, "[Rectangle] (89) 10/10 - 2/3")
 
+        r1.update(89, 2, 3, 4)
+        my_str = str(r1)
+        self.assertEqual(my_str, "[Rectangle] (89) 4/10 - 2/3")
 
-
-
-
-
-
+        r1.update(89, 2, 3, 4, 5)
+        my_str = str(r1)
+        self.assertEqual(my_str, "[Rectangle] (89) 4/5 - 2/3")
