@@ -71,7 +71,6 @@ class BaseTests(unittest.TestCase):
                 print(MyFile.read())
                 self.assertEqual(output.getvalue(), dummy)
 
-    
     def test_create_R(self):
         """ Testing the create method"""
         r1 = Rectangle(3, 5, 1)
@@ -96,7 +95,8 @@ class BaseTests(unittest.TestCase):
         i = 0
         for rect in l_output:
             self.assertEqual(str(rect), str(l_input[i]))
-            i =+ 1
+            i += 1
+
     def test_load_from_file_R2(self):
         """ Testing the load from file method """
         if os.path.exists("Rectangle.json"):
@@ -114,7 +114,8 @@ class BaseTests(unittest.TestCase):
         i = 0
         for rect in l_output:
             self.assertEqual(str(rect), str(l_input[i]))
-            i =+ 1
+            i += 1
+
     def test_load_from_file_S2(self):
         """ Testing the load from file method """
         if os.path.exists("Square.json"):

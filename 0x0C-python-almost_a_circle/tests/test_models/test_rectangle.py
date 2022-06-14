@@ -116,7 +116,7 @@ class TestRectangleMethods(unittest.TestCase):
         self.assertEqual(my_str, "[Rectangle] (89) 4/5 - 2/3")
 
         r2 = Rectangle(10, 10, 10, 10)
-        
+
         r2.update(height=1)
         my_str = str(r2)
         self.assertEqual(my_str, "[Rectangle] (2) 10/10 - 10/1")
@@ -128,7 +128,7 @@ class TestRectangleMethods(unittest.TestCase):
         r2.update(y=1, width=2, x=3, id=89)
         my_str = str(r2)
         self.assertEqual(my_str, "[Rectangle] (89) 3/1 - 2/1")
- 
+
         r2.update(x=1, height=2, y=3, width=4)
         my_str = str(r2)
         self.assertEqual(my_str, "[Rectangle] (89) 1/3 - 4/2")
