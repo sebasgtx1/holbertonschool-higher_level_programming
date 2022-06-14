@@ -93,3 +93,24 @@ class TestSquareMethods(unittest.TestCase):
 
         for key, value in my_dict.items():
             self.assertEqual(value, s1_dictionary[key])
+
+    def test_inheritance(self):
+        """ Testing inheritance """
+        new = Square(10)
+        self.assertEqual(True, isinstance(new, Base))
+        self.assertEqual(True, isinstance(new, Rectangle))
+
+    def test_attrb_error(self):
+        """ Testing bad arguments """
+        with self.assertRaises(TypeError):
+            new = Square()
+
+    def test_private(self):
+        """ Testing private attributes """
+        new = Square(10)
+        with self.assertRaises(AttributeError):
+            new.__size
+        with self.assertRaises(AttributeError):
+            new.__x
+        with self.assertRaises(AttributeError):
+            new.__y

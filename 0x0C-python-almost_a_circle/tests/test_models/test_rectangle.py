@@ -141,3 +141,27 @@ class TestRectangleMethods(unittest.TestCase):
 
         for key, value in my_dict.items():
             self.assertEqual(value, r1_dictionary[key])
+
+    def test_inheritance(self):
+        """ Testing inheritance """
+        new = Rectangle(10, 10)
+        self.assertEqual(True, isinstance(new, Base))
+
+    def test_attrb_error(self):
+        """ Testing bad arguments """
+        with self.assertRaises(TypeError):
+            new = Rectangle()
+        with self.assertRaises(TypeError):
+            new = Rectangle(1)
+
+    def test_private(self):
+        """ Testing private attributes """
+        new = Rectangle(10, 10)
+        with self.assertRaises(AttributeError):
+            new.__width
+        with self.assertRaises(AttributeError):
+            new.__height
+        with self.assertRaises(AttributeError):
+            new.__x
+        with self.assertRaises(AttributeError):
+            new.__y
