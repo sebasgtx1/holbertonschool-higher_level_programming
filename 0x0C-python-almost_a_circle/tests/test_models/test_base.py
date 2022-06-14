@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Test file for Base class """
 import unittest
+import os
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -70,6 +71,53 @@ class BaseTests(unittest.TestCase):
                 print(MyFile.read())
                 self.assertEqual(output.getvalue(), dummy)
 
+    
+    def test_create_R(self):
+        """ Testing the create method"""
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertEqual(str(r1), str(r2))
 
-if __name__ == '__main__':
-    unittest.main(verbosity=2)
+    def test_create_S(self):
+        """ Testing the create method"""
+        s1 = Square(10)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertEqual(str(s1), str(s2))
+
+    def test_load_from_file_R(self):
+        """ Testing the load from file method"""
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        l_input = [r1, r2]
+        Rectangle.save_to_file(l_input)
+        l_output = Rectangle.load_from_file()
+        i = 0
+        for rect in l_output:
+            self.assertEqual(str(rect), str(l_input[i]))
+            i =+ 1
+    def test_load_from_file_R2(self):
+        """ Testing the load from file method """
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
+        empty_list = Rectangle.load_from_file()
+        self.assertEqual(empty_list, [])
+
+    def test_load_from_file_S(self):
+        """ Testing the load from file method"""
+        s1 = Square(5)
+        s2 = Square(7, 9, 1)
+        l_input = [s1, s2]
+        Square.save_to_file(l_input)
+        l_output = Square.load_from_file()
+        i = 0
+        for rect in l_output:
+            self.assertEqual(str(rect), str(l_input[i]))
+            i =+ 1
+    def test_load_from_file_S2(self):
+        """ Testing the load from file method """
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
+        empty_list = Square.load_from_file()
+        self.assertEqual(empty_list, [])
