@@ -114,3 +114,13 @@ class TestSquareMethods(unittest.TestCase):
             new.__x
         with self.assertRaises(AttributeError):
             new.__y
+
+    def test_checking_g_and_s_S3(self):
+        """ testing assing """
+        s = Square(10)
+        s.size = 11
+        self.assertEqual(s.size, 11)
+        s.x = 4
+        self.assertEqual(s.x, 4)
+        s.y = 9
+        self.assertEqual(r.y, 9)

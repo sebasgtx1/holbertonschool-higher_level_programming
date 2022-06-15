@@ -70,6 +70,18 @@ class TestRectangleMethods(unittest.TestCase):
         with self.assertRaises(ValueError):
             r1 = Rectangle(1, 2, 1, -1)
 
+    def test_checking_g_and_s_R3(self):
+        """ testing assing """
+        r = Rectangle(1, 1)
+        r.width = 11
+        self.assertEqual(r.width, 11)
+        r.height = 2
+        self.assertEqual(r.height, 2)
+        r.x = 4
+        self.assertEqual(r.x, 4)
+        r.y = 9
+        self.assertEqual(r.y, 9)
+
     def test_area(self):
         """ testing the area funtion
         """
