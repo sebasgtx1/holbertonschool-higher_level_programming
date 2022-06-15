@@ -125,3 +125,41 @@ class BaseTests(unittest.TestCase):
             os.remove("Square.json")
         empty_list = Square.load_from_file()
         self.assertEqual(empty_list, [])
+
+    def test_load_from_file_csv_R(self):
+        """ Testing the load from file method"""
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        l_input = [r1, r2]
+        Rectangle.save_to_file_csv(l_input)
+        l_output = Rectangle.load_from_file_csv()
+        i = 0
+        for rect in l_output:
+            self.assertEqual(str(rect), str(l_input[i]))
+            i += 1
+
+    def test_load_from_file_csv_R2(self):
+        """ Testing the load from file method """
+        if os.path.exists("Rectangle.csv"):
+            os.remove("Rectangle.csv")
+        empty_list = Rectangle.load_from_file_csv()
+        self.assertEqual(empty_list, [])
+
+    def test_load_from_file_csv_S(self):
+        """ Testing the load from file method"""
+        s1 = Square(5)
+        s2 = Square(7, 9, 1)
+        l_input = [s1, s2]
+        Square.save_to_file_csv(l_input)
+        l_output = Square.load_from_file_csv()
+        i = 0
+        for rect in l_output:
+            self.assertEqual(str(rect), str(l_input[i]))
+            i += 1
+
+    def test_load_from_file_csv_S2(self):
+        """ Testing the load from file method """
+        if os.path.exists("Square.csv"):
+            os.remove("Square.csv")
+        empty_list = Square.load_from_file_csv()
+        self.assertEqual(empty_list, [])
