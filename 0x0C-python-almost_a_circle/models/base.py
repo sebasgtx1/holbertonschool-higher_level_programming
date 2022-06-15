@@ -2,6 +2,9 @@
 """ 1. base class """
 import json
 import os
+import turtle
+from random import seed
+from random import randint
 
 
 class Base():
@@ -107,3 +110,43 @@ class Base():
                 my_list.append(cls.create(**i))
 
         return my_list
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ public method to draw a figure """
+        skk = turtle.Turtle()
+        colors = ["red", "blue", "green", "purple", "orange", "black"]
+        i = randint(0, 6)
+        j = 0
+        for Rectangle in list_rectangles:
+            skk.up()
+            skk.goto(Rectangle.x + j, Rectangle.y)
+            skk.down()
+            skk.color(colors[(i + 20) % 6])
+            skk.fillcolor(colors[(i + 10) % 6])
+            skk.begin_fill()
+            for i in range(2):
+                skk.forward(Rectangle.width)
+                skk.right(90)
+                skk.forward(Rectangle.height)
+                skk.right(90)
+            skk.end_fill()
+            i += int((i % 2) + ((j + i*8) % 6)/2)
+            j += 100
+
+        i = randint(0, 6)
+        j = -100
+        for Square in list_squares:
+            skk.up()
+            skk.goto(Square.x + j, Square.y)
+            skk.down()
+            skk.color(colors[(i + 20) % 6])
+            skk.fillcolor(colors[(i + 10) % 6])
+            skk.begin_fill()
+            for i in range(4):
+                skk.forward(Square.size)
+                skk.right(90)
+            skk.end_fill()
+            i += int((i % 2) + ((j + i*9) % 6)/2)
+            j -= 100
+        turtle.done()
