@@ -18,7 +18,6 @@ class TestRectangleMethods(unittest.TestCase):
 
     def test_frist_R(self):
         """ creating a rectangle """
-
         r1 = Rectangle(1, 2)
         self.assertEqual(r1.width, 1)
         self.assertEqual(r1.height, 2)
@@ -26,6 +25,8 @@ class TestRectangleMethods(unittest.TestCase):
         self.assertEqual(r1.y, 0)
         self.assertEqual(r1.id, 1)
 
+    def test_second_R(self):
+        """ creating a second rectangle """
         r2 = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(r2.width, 1)
         self.assertEqual(r2.height, 2)
@@ -54,6 +55,8 @@ class TestRectangleMethods(unittest.TestCase):
         with self.assertRaises(TypeError):
             r1 = Rectangle(1, 2, 1, "1")
 
+    def test_checking_g_and_s_R2(self):
+        """ testing the value exceptions """
         with self.assertRaises(ValueError):
             r1 = Rectangle(0, 2)
         with self.assertRaises(ValueError):
