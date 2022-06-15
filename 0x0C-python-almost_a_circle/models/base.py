@@ -77,3 +77,33 @@ class Base():
                 my_list.append(cls.create(**i))
 
         return my_list
+
+    @classmethod
+    def save_to_file_cvs(cls, list_objs):
+        """ public method that writes the JSON string
+            representation of list_objs to a file
+        """
+        filename = "{}.cvs".format(cls.__name__)
+        json_list = []
+
+        if list_objs is not None:
+            for i in range(len(list_objs)):
+                json_list.append(list_objs[i].to_dictionary())
+
+        with open(filename, mode='w', encoding='utf-8') as MyFile:
+            MyFile.write(cls.to_json_string(json_list))
+
+    @classmethod
+    def load_from_file_cvs(cls):
+        """ public method that that returns a list of instances"""
+        filename = "{}.json".format(cls.__name__)
+        my_list = []
+
+        if os.path.exists(filename):
+            with open(filename, encoding="utf-8") as MyJFile:
+                obj = MyJFile.read()
+                my_obj_list = cls.from_json_string(obj)
+            for i in my_obj_list:
+                my_list.append(cls.create(**i))
+
+        return my_list
