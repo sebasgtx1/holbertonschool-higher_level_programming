@@ -123,4 +123,4 @@ class TestSquareMethods(unittest.TestCase):
         s.x = 4
         self.assertEqual(s.x, 4)
         s.y = 9
-        self.assertEqual(r.y, 9)
+        self.assertEqual(s.y, 9)
