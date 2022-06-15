@@ -16,6 +16,10 @@ class BaseTests(unittest.TestCase):
         """ Restart the nb_objects without del """
         Base._Base__nb_objects = 0
 
+    def test_base(self):
+        """ base case """
+        self.assertTrue(True)
+
     def test_main(self):
         """ main case """
         b1 = Base()
