@@ -83,7 +83,7 @@ class Base():
         """ public method that writes the JSON string
             representation of list_objs to a file
         """
-        filename = "{}.cvs".format(cls.__name__)
+        filename = "{}.csv".format(cls.__name__)
         json_list = []
 
         if list_objs is not None:
@@ -94,9 +94,9 @@ class Base():
             MyFile.write(cls.to_json_string(json_list))
 
     @classmethod
-    def load_from_file_cvs(cls):
+    def load_from_file_csv(cls):
         """ public method that that returns a list of instances"""
-        filename = "{}.json".format(cls.__name__)
+        filename = "{}.csv".format(cls.__name__)
         my_list = []
 
         if os.path.exists(filename):
