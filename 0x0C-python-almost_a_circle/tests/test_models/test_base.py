@@ -30,7 +30,7 @@ class BaseTests(unittest.TestCase):
         b4 = Base(12)
         self.assertEqual(b4.id, 12)
         b5 = Base()
-        self.assertEqual(b5.id, 4)
+        self.assertEqual(b5.id, 1)
 
     def test_more_than_one_id(self):
         """ Passing two arguments to the Base
