@@ -79,7 +79,7 @@ class Base():
         return my_list
 
     @classmethod
-    def save_to_file_cvs(cls, list_objs):
+    def save_to_file_csv(cls, list_objs):
         """ public method that writes the JSON string
             representation of list_objs to a file
         """
