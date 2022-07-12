@@ -1,0 +1,3 @@
+-- List records of the second_table
+-- Query to list all the records with score >=10 of the second_table
+SELECT score, name FROM second_table WHERE score >= 10 ORDER BY score DESC;
