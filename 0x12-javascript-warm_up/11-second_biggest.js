@@ -7,5 +7,9 @@ if (args.length <= 3) {
   args = args.map(Number);
   const max = Math.max(...args);
   args.splice(args.indexOf(max), args.indexOf(max) - 1);
-  console.log(Math.max(...args));
+  if (Number.isNaN(Math.max(...args))) {
+    console.log(0);
+  } else {
+    console.log(Math.max(...args));
+  }
 }
