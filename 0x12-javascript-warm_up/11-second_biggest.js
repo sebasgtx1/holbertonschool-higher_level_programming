@@ -1,15 +1,10 @@
 #!/usr/bin/node
 let args = process.argv;
-if (args.length <= 3) {
+args = args.splice(2, args.length);
+if (args.length < 2) {
   console.log(0);
 } else {
-  args = args.splice(2, args.length);
   args = args.map(Number);
-  const max = Math.max(...args);
-  args.splice(args.indexOf(max), args.indexOf(max) - 1);
-  if (Number.isNaN(Math.max(...args))) {
-    console.log(0);
-  } else {
-    console.log(Math.max(...args));
-  }
+  args.sort(function(a, b){return b - a});
+  console.log(args[1]);
 }
