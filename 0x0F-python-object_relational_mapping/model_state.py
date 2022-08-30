@@ -2,11 +2,11 @@
 """
 Contains State class that inherits from Base (declarative_base())
 """
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 
+mymetadata = MetaData()
 Base = declarative_base(metadata=mymetadata)
-
 
 class State(Base):
     """
