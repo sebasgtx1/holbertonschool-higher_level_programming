@@ -9,7 +9,7 @@ Base = declarative_base()
 
 
 class City(Base):
-    """ 
+    """
         City class that inherits from Base class
     """
     __tablename__ = 'cities'
