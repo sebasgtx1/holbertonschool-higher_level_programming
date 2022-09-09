@@ -6,5 +6,5 @@ of the response.
 import urllib.request
 import sys
 
- with urllib.request.urlopen(sys.argv[1]) as res:
+with urllib.request.urlopen(sys.argv[1]) as res:
     print(res.headers.get('X-Request-Id'))
