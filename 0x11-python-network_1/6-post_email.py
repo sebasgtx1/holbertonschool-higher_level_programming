@@ -11,5 +11,5 @@ import sys
 if __name__ == "__main__":
     url = sys.argv[1]
     data = {"email": sys.argv[2]}
-    result = requests.post(url, data=data)
-    print(result.text)
+    response = requests.post(url, data=data)
+    print(response.text)
