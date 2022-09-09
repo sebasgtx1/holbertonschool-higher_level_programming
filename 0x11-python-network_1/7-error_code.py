@@ -12,4 +12,4 @@ if __name__ == "__main__":
     r = requests.get(sys.argv[1])
     status = r.status_code
     body = r.text
-    print("Error code: {}".format(status)) if code >= 400 else print(body)
+    print("Error code: {}".format(status)) if status >= 400 else print(body)
