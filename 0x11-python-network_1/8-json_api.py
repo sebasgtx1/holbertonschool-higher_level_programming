@@ -8,7 +8,7 @@ import sys
 
 
 if __name__ == "__main__":
-    q = sys.argv[1] if sys.argv[1] and sys.argv[1].isalpha() else ""
+    q = sys.argv[1] if len(sys.argv) == 2 and sys.argv[1].isalpha() else ""
     r = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
     try:
         r_json = r.json()
